@@ -1,10 +1,17 @@
-const addTask = document.getElementById("addTask");
+const inputTask = document.getElementById("inputTask");
 const inputBox = document.getElementById("input-box");
 const taskList = document.getElementById("list-container");
 
-addTask.addEventListener("click", function () {
+inputTask.addEventListener("click", addTask);
+inputBox.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    addTask();
+  }
+});
+
+function addTask() {
   if (inputBox.value === "") {
-    alert("Please ente some task");
+    alert("Please enter some task");
   } else {
     let newTask = document.createElement("li");
     newTask.textContent = inputBox.value;
@@ -16,7 +23,7 @@ addTask.addEventListener("click", function () {
     document.getElementById("input-box").value = "";
   }
   saveData();
-});
+}
 
 taskList.addEventListener(
   "click",

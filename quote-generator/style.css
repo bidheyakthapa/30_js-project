@@ -43,6 +43,7 @@ body {
 .quote-box blockquote {
   font-size: 26px;
   min-height: 110px;
+  line-height: 35px;
 }
 
 .quote-box blockquote::after,
@@ -58,7 +59,7 @@ body {
 }
 
 .quote-box span::before {
-  content: "-";
+  content: "";
   width: 20px;
   height: 2px;
   background: rgb(23, 124, 229);
@@ -84,8 +85,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 5px;
+  margin: 15px;
   cursor: pointer;
+  
 }
 
 .quote-box button img {

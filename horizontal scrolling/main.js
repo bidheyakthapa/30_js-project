@@ -3,6 +3,7 @@ let backBtn = document.getElementById("backBtn");
 let nextBtn = document.getElementById("nextBtn");
 let scrollDirection = 1;
 let intervalId;
+let scrollCount = 0;
 
 scrollContainer.addEventListener("wheel", (evt) => {
   evt.preventDefault();
@@ -23,10 +24,32 @@ backBtn.addEventListener("click", () => {
 intervalId = setInterval(() => {
   scrollContainer.scrollBy({
     left: 900 * scrollDirection,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
+  scrollCount++;
+  if (scrollCount >= 3) {
+    scrollDirection *= -1;
+    scrollCount = 0;
+  }
 }, 5000);
 
-setInterval(() => {
-  scrollDirection *= -1;
-}, 15000);
+// Pause scrolling when mouse hovers over the container
+scrollContainer.addEventListener("mouseenter", () => {
+  clearInterval(intervalId);
+});
+
+// Resume scrolling when mouse moves out of the container
+scrollContainer.addEventListener("mouseleave", () => {
+  clearInterval(intervalId);
+  intervalId = setInterval(() => {
+    scrollContainer.scrollBy({
+      left: 900 * scrollDirection,
+      behavior: "smooth",
+    });
+    scrollCount++;
+    if (scrollCount >= 3) {
+      scrollDirection *= -1;
+      scrollCount = 0;
+    }
+  }, 5000);
+});

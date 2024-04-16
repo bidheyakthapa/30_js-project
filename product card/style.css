@@ -19,8 +19,11 @@
 }
 .gallery {
   flex-basis: 47%;
-  transform: scale(1.20);
+  transform: scale(1.08);
+  background: #f4f4f4;
   box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.1);
+  padding-top: 150px;
+  position: relative;
 }
 .gallery img {
   width: 100%;
@@ -32,4 +35,97 @@
   padding: 40px;
   padding-left: 60px;
   box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+  font-weight: 500;
+  color: #777;
+}
+.details h1 {
+  color: #2c5da6;
+  font-size: 35px;
+}
+.details h2 {
+  color: #4e4e4e;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 10px 0px;
+}
+.details h3 {
+  color: #3ddc6d;
+  margin-bottom: 20px;
+}
+.details form {
+  font-size: 15px;
+  font-weight: 400;
+}
+.size-sel {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+.size-sel p {
+  width: 70px;
+}
+.size-sel input:checked + span {
+  color: #2c5da6;
+  font-weight: 600;
+  border: 1.75px solid #2c5da6;
+}
+.size-sel input {
+  display: none;
+}
+.size-sel span {
+  padding: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  min-width: 30px;
+  border: 1.75px solid #777;
+  display: block;
+  text-align: center;
+  border-radius: 2px;
+}
+.quantity-sel {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.quantity-sel p {
+  width: 75px;
+}
+.quantity-sel input {
+  background: #f4f4f4;
+  border: 0;
+  outline: 0;
+  padding: 2px 2px 2px 15px;
+  width: 50px;
+  border-radius: 12px;
+}
+form button {
+  background: #553ff0;
+  color: #fff;
+  font-size: 17px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px;
+  border: 0;
+  outline: 0;
+  margin-top: 50px;
+  box-shadow: 0px 10px 10px rgba(84, 63, 240, 0.25);
+  cursor: pointer;
+}
+.controls {
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+}
+.btn {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  cursor: pointer;
+}
+.btn.active {
+  background: #2c5da6;
 }
